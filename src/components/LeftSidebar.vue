@@ -1,19 +1,12 @@
 <template>
     <div class="sideBar">
-        <!-- <button v-for="(section, index) in sections" :key="index" v-on:click="openApp(section.data, section.sec)">{{ section.sec }}</button> -->
         <button v-for="(section, index) in sections" :key="index" v-on:click="openApp(section.data, section.sec)">App {{ appNumber }} - Section {{ section.sec }}</button>
-        <!-- <button v-on:click="openApp(2)">App 2</button>
-        <button v-on:click="openApp(3)">App 3</button> -->
     </div>
 </template>
 
 <script>
-// import App1 from './App1';
-// import HomePage from './HomePage'
+
 export default{
-    // components: {
-    //     HomePage
-    // }
     computed: {
     sections(){
         return this.$store.state.arr
@@ -24,7 +17,6 @@ export default{
     },
     methods: {
         openApp: function(data, id){
-            console.log(id, data)
             this.$store.commit('openAppId',{data, id})
         }
     }
