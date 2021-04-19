@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HomePage v-if="id==0" />
+    <App1 v-if="id!=0" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomePage from './components/HomePage.vue';
+import App1 from './components/App1.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    App1,
+    HomePage
+  },
+  computed:{
+    id(){
+      return this.$store.state.idToDisplay
+    }
   }
 }
 </script>
@@ -23,6 +30,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+}
+h1{
+    margin-top: 0;
 }
 </style>
