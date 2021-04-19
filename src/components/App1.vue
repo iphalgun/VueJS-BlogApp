@@ -11,7 +11,7 @@
                     <h2>Welcome to App {{ appNumber }}</h2>
                 </div>
                 <div>
-                <p>{{ text }}</p>
+                    <slot name="section-blog"></slot>
                 </div>
             </div>
         </div>

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <HomePage v-if="id==0" />
-    <App1 v-if="id!=0" />
+    <App1 v-if="id!=0">
+      <p slot="section-blog">{{ text }}</p>
+    </App1>
   </div>
 </template>
 
@@ -16,6 +18,9 @@ export default {
     HomePage
   },
   computed:{
+    text(){
+        return this.$store.state.text
+    },
     id(){
       return this.$store.state.idToDisplay
     }
